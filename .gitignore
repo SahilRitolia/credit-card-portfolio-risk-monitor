@@ -1,0 +1,25 @@
+# Raw and client-level data never leave the machine
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/cubes/
+!data/processed/backtest_results.parquet
+*.duckdb
+*.duckdb.wal
+*.csv.zip
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.env
+dist/
+*.egg-info/
+.DS_Store
+
+docs/PROGRESS.md
+docs/checkpoints/
+docs/interview_prep.md

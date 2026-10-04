@@ -1,0 +1,1072 @@
+{
+  "metrics": {
+    "credit_rows": 1048575.0,
+    "credit_clients": 45985.0,
+    "credit_dup_id_month": 0.0,
+    "credit_null_id": 0.0,
+    "credit_null_month": 0.0,
+    "credit_invalid_status": 0.0,
+    "month_min": -60.0,
+    "month_max": 0.0,
+    "month_values": 61.0,
+    "month_successive_pairs": 1002590.0,
+    "month_gap_pairs": 0.0,
+    "month_single_gap_pairs": 0.0,
+    "month_multi_gap_pairs": 0.0,
+    "app_rows": 438557.0,
+    "app_unique_ids": 438510.0,
+    "app_duplicated_ids": 47.0,
+    "app_null_id": 0.0,
+    "matched_clients": 36457.0,
+    "application_only": 402053.0,
+    "credit_only": 9528.0,
+    "app_ids_above_max_credit_id": 402053.0,
+    "app_ids_at_or_below_max_credit_id": 36457.0,
+    "matched_at_or_below_max_credit_id": 36457.0,
+    "matched_above_max_credit_id": 0.0,
+    "records_per_client_median": 19.0,
+    "records_per_client_mean": 22.802544307926496,
+    "records_per_client_max": 61.0,
+    "single_record_clients": 399.0,
+    "short_history_clients": 5216.0,
+    "full_window_clients": 222.0,
+    "first_status_x_clients": 18737.0,
+    "first_status_0_clients": 26802.0,
+    "first_status_c_clients": 432.0,
+    "first_status_other_clients": 14.0,
+    "x_only_clients": 4536.0,
+    "clients_with_nonx": 41449.0,
+    "first_nonx_0_clients": 39827.0,
+    "first_nonx_c_clients": 1418.0,
+    "first_nonx_1_clients": 191.0,
+    "record_mob_differs_clients": 14201.0,
+    "c_transitions_total": 419324.0,
+    "c_to_c": 419323.0,
+    "c_to_open": 1.0,
+    "c_to_x": 0.0,
+    "c_preceded_by_open": 20241.0,
+    "open_preceded_by_c": 1.0,
+    "delinquent_preceded_by_c": 1.0,
+    "active_to_x_exits": 27660.0,
+    "active_to_x_clients": 12183.0,
+    "x_to_active_reentries": 19930.0,
+    "x_to_active_clients": 6561.0,
+    "exiting_clients_who_reenter": 6561.0,
+    "co_transitions_nonx": 1564.0,
+    "co_to_nonco_consecutive_nonx": 107.0,
+    "co_to_x": 47.0,
+    "co_to_c": 68.0,
+    "co_to_0": 23.0,
+    "co_to_1": 4.0,
+    "co_to_2": 7.0,
+    "co_to_3": 5.0,
+    "co_to_4": 0.0,
+    "open_accounts_m0": 9318.0,
+    "open_accounts_m1": 10769.0,
+    "nonx_m1": 28273.0,
+    "app_days_employed_sentinel": 75329.0,
+    "app_occupation_null": 134203.0,
+    "app_income_null": 0.0,
+    "app_days_birth_null": 0.0,
+    "app_age_min_years": 20.503764544832308,
+    "app_age_max_years": 68.99657768651609,
+    "max_credit_id": 5150487.0,
+    "max_credit_id_records": 30.0,
+    "max_credit_id_first_month": -29.0,
+    "max_credit_id_last_month": 0.0,
+    "max_credit_id_first_status_is_c": 1.0
+  },
+  "checks": [
+    {
+      "group": "Volume",
+      "check": "Application rows",
+      "value": 438557.0,
+      "rule": "> 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Volume",
+      "check": "Credit rows",
+      "value": 1048575.0,
+      "rule": "> 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Volume",
+      "check": "Unique applicants",
+      "value": 438510.0,
+      "rule": "> 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Volume",
+      "check": "Unique credit clients",
+      "value": 45985.0,
+      "rule": "> 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Linkage",
+      "check": "Matched clients (both files)",
+      "value": 36457.0,
+      "rule": "> 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Linkage",
+      "check": "Credit clients with demographics",
+      "value": 0.7928020006523866,
+      "rule": ">= 75% else WARNING",
+      "status": "PASS",
+      "detail": "Segmentation uses matched clients only."
+    },
+    {
+      "group": "Linkage",
+      "check": "Applicants with credit history",
+      "value": 0.08313835488358304,
+      "rule": "informational; low rate = WARNING",
+      "status": "WARNING",
+      "detail": "Most application IDs have no credit record (see file truncation)."
+    },
+    {
+      "group": "Uniqueness",
+      "check": "Duplicate (ID, month) in credit file",
+      "value": 0.0,
+      "rule": "= 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Uniqueness",
+      "check": "Duplicated application IDs",
+      "value": 47.0,
+      "rule": "= 0 else WARNING (kept once, flagged)",
+      "status": "WARNING",
+      "detail": "47 of them disagree on attributes and are excluded from segmentation."
+    },
+    {
+      "group": "Validity",
+      "check": "Invalid status values",
+      "value": 0.0,
+      "rule": "= 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Validity",
+      "check": "Null ID or month in credit file",
+      "value": 0.0,
+      "rule": "= 0",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Validity",
+      "check": "Month range",
+      "value": "-60 to 0",
+      "rule": "max = 0 (relative index)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Continuity",
+      "check": "Month gaps within client histories",
+      "value": 0.0,
+      "rule": "= 0 else WARNING (gaps are never filled)",
+      "status": "PASS",
+      "detail": "1002590 successive record pairs checked with LAG."
+    },
+    {
+      "group": "History",
+      "check": "Single-record clients",
+      "value": 399.0,
+      "rule": "informational",
+      "status": "PASS",
+      "detail": "No transition can be observed for them."
+    },
+    {
+      "group": "History",
+      "check": "Clients with fewer than 6 records",
+      "value": 5216.0,
+      "rule": "informational",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "History",
+      "check": "Clients observed for all 61 months",
+      "value": 222.0,
+      "rule": "informational",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "History",
+      "check": "Clients whose first record is X (leading dormant months)",
+      "value": 0.4074589540067413,
+      "rule": "<= 25% else WARNING",
+      "status": "WARNING",
+      "detail": "MOB starts at the first non-X month, not the first record."
+    },
+    {
+      "group": "History",
+      "check": "Clients that are never open (X only)",
+      "value": 4536.0,
+      "rule": "informational",
+      "status": "PASS",
+      "detail": "Kept in the audit, excluded from vintages and transitions."
+    },
+    {
+      "group": "Maturity",
+      "check": "Immature vintages (fewer than 12 observable MOB)",
+      "value": 12,
+      "rule": "informational",
+      "status": "WARNING",
+      "detail": "Their curves are truncated at the last observable MOB."
+    },
+    {
+      "group": "Semantics",
+      "check": "C returns to an open status",
+      "value": 1.0,
+      "rule": "<= 0.1% of transitions out of C",
+      "status": "PASS",
+      "detail": "Evidence that C is an absorbing exit (PAID-OFF), not CURRENT."
+    },
+    {
+      "group": "Semantics",
+      "check": "Dormant (X) exits that later return",
+      "value": 0.5385373060822457,
+      "rule": "informational",
+      "status": "PASS",
+      "detail": "X is a transient DORMANT state, not an exit."
+    },
+    {
+      "group": "Semantics",
+      "check": "Charge-off (5) followed by a non-5 status",
+      "value": 0.06841432225063938,
+      "rule": "<= 5% else WARNING",
+      "status": "WARNING",
+      "detail": "Flagged in the anomaly table; the model enforces absorption; sensitivity reported."
+    },
+    {
+      "group": "Truncation",
+      "check": "credit_record.csv cut at Excel row limit",
+      "value": "fired",
+      "rule": "row count = Excel limit and hard ID cut => WARNING",
+      "status": "WARNING",
+      "detail": "Final client excluded from analysis."
+    },
+    {
+      "group": "Truncation",
+      "check": "Left truncation of earliest vintages",
+      "value": "not fired",
+      "rule": "early MOB-0 mix or size pile-up => WARNING",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "Missing values",
+      "check": "OCCUPATION_TYPE missing",
+      "value": 0.30601039317580153,
+      "rule": "informational",
+      "status": "PASS",
+      "detail": "Not used by any metric."
+    },
+    {
+      "group": "Missing values",
+      "check": "DAYS_EMPLOYED sentinel 365243",
+      "value": 75329.0,
+      "rule": "set to NULL",
+      "status": "WARNING",
+      "detail": "Converted to missing in 03_cleaning.sql."
+    }
+  ],
+  "truncation": {
+    "row_count": 1048575,
+    "excel_row_limit": 1048575,
+    "row_count_equals_limit": true,
+    "final_client_id": "5150487",
+    "final_client_is_max_id": true,
+    "final_client_records": 30.0,
+    "final_client_first_month": -29.0,
+    "final_client_first_status_is_c": true,
+    "first_record_c_rate_all_clients": 0.009394367728607154,
+    "app_ids_above_cut": 402053.0,
+    "app_ids_above_cut_matched": 0.0,
+    "app_ids_at_or_below_cut": 36457.0,
+    "app_ids_at_or_below_cut_matched": 36457.0,
+    "fired": true,
+    "excluded": true
+  },
+  "left_truncation": {
+    "first_vintage_month": -60,
+    "first_vintage_size": 231.0,
+    "median_vintage_size": 694.0,
+    "first_vintage_b0_share": 0.9956709956709957,
+    "early_non_b0_share": 0.007567567567567578,
+    "later_non_b0_share": 0.03982923278138341,
+    "fired": false
+  },
+  "excluded_clients": 1,
+  "conflicting_duplicate_ids": 47.0,
+  "immature_vintages": 12,
+  "dormant_return_share": 0.5385373060822457,
+  "pilot_reconciliation": [
+    {
+      "item": "credit_rows",
+      "pilot": 1048575.0,
+      "computed": 1048575.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "credit_clients",
+      "pilot": 45985.0,
+      "computed": 45985.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "credit_dup_id_month",
+      "pilot": 0.0,
+      "computed": 0.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "month_min",
+      "pilot": -60.0,
+      "computed": -60.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "month_max",
+      "pilot": 0.0,
+      "computed": 0.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "month_gap_pairs",
+      "pilot": 0.0,
+      "computed": 0.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "matched_clients",
+      "pilot": 36457.0,
+      "computed": 36457.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "application_only",
+      "pilot": 402053.0,
+      "computed": 402053.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "credit_only",
+      "pilot": 9528.0,
+      "computed": 9528.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "first_status_x_clients",
+      "pilot": 18737.0,
+      "computed": 18737.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "first_status_0_clients",
+      "pilot": 26802.0,
+      "computed": 26802.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "first_status_c_clients",
+      "pilot": 432.0,
+      "computed": 432.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "c_to_c",
+      "pilot": 419323.0,
+      "computed": 419323.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "c_transitions_total",
+      "pilot": 419324.0,
+      "computed": 419324.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "c_preceded_by_open",
+      "pilot": 20241.0,
+      "computed": 20241.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "open_preceded_by_c",
+      "pilot": 1.0,
+      "computed": 1.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "active_to_x_exits",
+      "pilot": 27660.0,
+      "computed": 27660.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "active_to_x_clients",
+      "pilot": 12183.0,
+      "computed": 12183.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "x_to_active_reentries",
+      "pilot": 19930.0,
+      "computed": 19930.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "x_to_active_clients",
+      "pilot": 6561.0,
+      "computed": 6561.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "co_to_nonco_consecutive_nonx",
+      "pilot": 107.0,
+      "computed": 107.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "co_transitions_nonx",
+      "pilot": 1564.0,
+      "computed": 1564.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "open_accounts_m0",
+      "pilot": 9318.0,
+      "computed": 9318.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "open_accounts_m1",
+      "pilot": 10769.0,
+      "computed": 10769.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "nonx_m1",
+      "pilot": 28273.0,
+      "computed": 28273.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "x_only_clients",
+      "pilot": 4536.0,
+      "computed": 4536.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "new_co_12m_from_m12",
+      "pilot": 41.0,
+      "computed": 41.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "open_0_4_at_m12",
+      "pilot": 9554.0,
+      "computed": 9554.0,
+      "difference": 0.0,
+      "agrees": true
+    },
+    {
+      "item": "vintage_m60_clients",
+      "pilot": 231.0,
+      "computed": 231.0,
+      "difference": 0.0,
+      "agrees": true
+    }
+  ],
+  "new_chargeoffs": [
+    {
+      "ORIGIN": -36,
+      "open_0_4": 5954,
+      "new_co_12m": 29
+    },
+    {
+      "ORIGIN": -30,
+      "open_0_4": 6770,
+      "new_co_12m": 34
+    },
+    {
+      "ORIGIN": -24,
+      "open_0_4": 7674,
+      "new_co_12m": 34
+    },
+    {
+      "ORIGIN": -18,
+      "open_0_4": 8664,
+      "new_co_12m": 37
+    },
+    {
+      "ORIGIN": -12,
+      "open_0_4": 9554,
+      "new_co_12m": 41
+    }
+  ],
+  "raw_transition_counts": [
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "0",
+      "n": 319132
+    },
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "1",
+      "n": 7057
+    },
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "2",
+      "n": 103
+    },
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "3",
+      "n": 16
+    },
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "4",
+      "n": 1
+    },
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "5",
+      "n": 44
+    },
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "C",
+      "n": 19064
+    },
+    {
+      "FROM_STATUS": "0",
+      "TO_STATUS": "X",
+      "n": 27156
+    },
+    {
+      "FROM_STATUS": "1",
+      "TO_STATUS": "0",
+      "n": 5363
+    },
+    {
+      "FROM_STATUS": "1",
+      "TO_STATUS": "1",
+      "n": 3412
+    },
+    {
+      "FROM_STATUS": "1",
+      "TO_STATUS": "2",
+      "n": 559
+    },
+    {
+      "FROM_STATUS": "1",
+      "TO_STATUS": "3",
+      "n": 6
+    },
+    {
+      "FROM_STATUS": "1",
+      "TO_STATUS": "5",
+      "n": 2
+    },
+    {
+      "FROM_STATUS": "1",
+      "TO_STATUS": "C",
+      "n": 998
+    },
+    {
+      "FROM_STATUS": "1",
+      "TO_STATUS": "X",
+      "n": 397
+    },
+    {
+      "FROM_STATUS": "2",
+      "TO_STATUS": "0",
+      "n": 210
+    },
+    {
+      "FROM_STATUS": "2",
+      "TO_STATUS": "1",
+      "n": 137
+    },
+    {
+      "FROM_STATUS": "2",
+      "TO_STATUS": "2",
+      "n": 138
+    },
+    {
+      "FROM_STATUS": "2",
+      "TO_STATUS": "3",
+      "n": 257
+    },
+    {
+      "FROM_STATUS": "2",
+      "TO_STATUS": "4",
+      "n": 7
+    },
+    {
+      "FROM_STATUS": "2",
+      "TO_STATUS": "C",
+      "n": 64
+    },
+    {
+      "FROM_STATUS": "2",
+      "TO_STATUS": "X",
+      "n": 36
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "0",
+      "n": 26
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "1",
+      "n": 14
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "2",
+      "n": 22
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "3",
+      "n": 28
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "4",
+      "n": 185
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "5",
+      "n": 3
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "C",
+      "n": 20
+    },
+    {
+      "FROM_STATUS": "3",
+      "TO_STATUS": "X",
+      "n": 16
+    },
+    {
+      "FROM_STATUS": "4",
+      "TO_STATUS": "0",
+      "n": 11
+    },
+    {
+      "FROM_STATUS": "4",
+      "TO_STATUS": "2",
+      "n": 3
+    },
+    {
+      "FROM_STATUS": "4",
+      "TO_STATUS": "3",
+      "n": 2
+    },
+    {
+      "FROM_STATUS": "4",
+      "TO_STATUS": "4",
+      "n": 22
+    },
+    {
+      "FROM_STATUS": "4",
+      "TO_STATUS": "5",
+      "n": 145
+    },
+    {
+      "FROM_STATUS": "4",
+      "TO_STATUS": "C",
+      "n": 27
+    },
+    {
+      "FROM_STATUS": "4",
+      "TO_STATUS": "X",
+      "n": 8
+    },
+    {
+      "FROM_STATUS": "5",
+      "TO_STATUS": "0",
+      "n": 23
+    },
+    {
+      "FROM_STATUS": "5",
+      "TO_STATUS": "1",
+      "n": 4
+    },
+    {
+      "FROM_STATUS": "5",
+      "TO_STATUS": "2",
+      "n": 7
+    },
+    {
+      "FROM_STATUS": "5",
+      "TO_STATUS": "3",
+      "n": 5
+    },
+    {
+      "FROM_STATUS": "5",
+      "TO_STATUS": "5",
+      "n": 1457
+    },
+    {
+      "FROM_STATUS": "5",
+      "TO_STATUS": "C",
+      "n": 68
+    },
+    {
+      "FROM_STATUS": "5",
+      "TO_STATUS": "X",
+      "n": 47
+    },
+    {
+      "FROM_STATUS": "C",
+      "TO_STATUS": "1",
+      "n": 1
+    },
+    {
+      "FROM_STATUS": "C",
+      "TO_STATUS": "C",
+      "n": 419323
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "0",
+      "n": 31553
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "1",
+      "n": 452
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "2",
+      "n": 36
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "3",
+      "n": 6
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "4",
+      "n": 8
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "5",
+      "n": 41
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "C",
+      "n": 2035
+    },
+    {
+      "FROM_STATUS": "X",
+      "TO_STATUS": "X",
+      "n": 162833
+    }
+  ],
+  "status_counts": [
+    {
+      "STATUS": "0",
+      "n_rows": 383120,
+      "n_clients": 39980
+    },
+    {
+      "STATUS": "1",
+      "n_rows": 11090,
+      "n_clients": 5201
+    },
+    {
+      "STATUS": "2",
+      "n_rows": 868,
+      "n_clients": 597
+    },
+    {
+      "STATUS": "3",
+      "n_rows": 320,
+      "n_clients": 268
+    },
+    {
+      "STATUS": "4",
+      "n_rows": 223,
+      "n_clients": 190
+    },
+    {
+      "STATUS": "5",
+      "n_rows": 1693,
+      "n_clients": 195
+    },
+    {
+      "STATUS": "C",
+      "n_rows": 442031,
+      "n_clients": 22707
+    },
+    {
+      "STATUS": "X",
+      "n_rows": 209230,
+      "n_clients": 25005
+    }
+  ],
+  "status_month0": [
+    {
+      "STATUS": "0",
+      "n": 8914
+    },
+    {
+      "STATUS": "1",
+      "n": 309
+    },
+    {
+      "STATUS": "2",
+      "n": 19
+    },
+    {
+      "STATUS": "3",
+      "n": 6
+    },
+    {
+      "STATUS": "4",
+      "n": 5
+    },
+    {
+      "STATUS": "5",
+      "n": 65
+    },
+    {
+      "STATUS": "C",
+      "n": 17613
+    },
+    {
+      "STATUS": "X",
+      "n": 6925
+    }
+  ],
+  "app_nulls": [
+    {
+      "column_name": "ID",
+      "n_null": 0
+    },
+    {
+      "column_name": "CODE_GENDER",
+      "n_null": 0
+    },
+    {
+      "column_name": "AMT_INCOME_TOTAL",
+      "n_null": 0
+    },
+    {
+      "column_name": "DAYS_BIRTH",
+      "n_null": 0
+    },
+    {
+      "column_name": "DAYS_EMPLOYED",
+      "n_null": 0
+    },
+    {
+      "column_name": "NAME_INCOME_TYPE",
+      "n_null": 0
+    },
+    {
+      "column_name": "NAME_EDUCATION_TYPE",
+      "n_null": 0
+    },
+    {
+      "column_name": "NAME_FAMILY_STATUS",
+      "n_null": 0
+    },
+    {
+      "column_name": "NAME_HOUSING_TYPE",
+      "n_null": 0
+    },
+    {
+      "column_name": "OCCUPATION_TYPE",
+      "n_null": 134203
+    },
+    {
+      "column_name": "CNT_FAM_MEMBERS",
+      "n_null": 0
+    }
+  ],
+  "transition_anomalies": [
+    {
+      "FROM_STATE": "CHARGE-OFF",
+      "TO_STATE": "PAID-OFF",
+      "n": 68
+    },
+    {
+      "FROM_STATE": "CHARGE-OFF",
+      "TO_STATE": "DORMANT",
+      "n": 47
+    },
+    {
+      "FROM_STATE": "CHARGE-OFF",
+      "TO_STATE": "1-29",
+      "n": 23
+    },
+    {
+      "FROM_STATE": "CHARGE-OFF",
+      "TO_STATE": "60-89",
+      "n": 7
+    },
+    {
+      "FROM_STATE": "CHARGE-OFF",
+      "TO_STATE": "90-119",
+      "n": 5
+    },
+    {
+      "FROM_STATE": "CHARGE-OFF",
+      "TO_STATE": "30-59",
+      "n": 4
+    },
+    {
+      "FROM_STATE": "PAID-OFF",
+      "TO_STATE": "30-59",
+      "n": 1
+    }
+  ],
+  "absorbing_stays": [
+    {
+      "FROM_STATE": "PAID-OFF",
+      "n": 419294
+    },
+    {
+      "FROM_STATE": "CHARGE-OFF",
+      "n": 1457
+    }
+  ],
+  "vintage_sizes": {
+    "-60": 231,
+    "-59": 333,
+    "-58": 361,
+    "-57": 311,
+    "-56": 382,
+    "-55": 398,
+    "-54": 368,
+    "-53": 412,
+    "-52": 447,
+    "-51": 489,
+    "-50": 488,
+    "-49": 496,
+    "-48": 505,
+    "-47": 542,
+    "-46": 473,
+    "-45": 549,
+    "-44": 516,
+    "-43": 543,
+    "-42": 612,
+    "-41": 626,
+    "-40": 575,
+    "-39": 727,
+    "-38": 663,
+    "-37": 683,
+    "-36": 608,
+    "-35": 707,
+    "-34": 705,
+    "-33": 677,
+    "-32": 658,
+    "-31": 687,
+    "-30": 691,
+    "-29": 724,
+    "-28": 710,
+    "-27": 783,
+    "-26": 663,
+    "-25": 769,
+    "-24": 824,
+    "-23": 844,
+    "-22": 798,
+    "-21": 767,
+    "-20": 835,
+    "-19": 824,
+    "-18": 776,
+    "-17": 862,
+    "-16": 868,
+    "-15": 853,
+    "-14": 853,
+    "-13": 895,
+    "-12": 919,
+    "-11": 923,
+    "-10": 931,
+    "-9": 936,
+    "-8": 953,
+    "-7": 1054,
+    "-6": 939,
+    "-5": 957,
+    "-4": 865,
+    "-3": 884,
+    "-2": 772,
+    "-1": 694,
+    "0": 510
+  },
+  "status_summary": {
+    "PASS": 19,
+    "WARNING": 7
+  },
+  "timings_sql": {
+    "01_schema.sql": 1.0447448659999736,
+    "02_data_quality.sql": 1.7157297830000289,
+    "03_cleaning.sql": 1.4503503750000846,
+    "04_account_panel.sql": 0.659295635000035,
+    "05_transitions.sql": 1.4319621059999008,
+    "06_roll_rates.sql": 0.7426104840000107,
+    "07_vintage_analysis.sql": 0.19038594100004502,
+    "08_cure_rates.sql": 0.4037034100000483,
+    "09_ageing_snapshot.sql": 0.23820429800002785,
+    "10_segmentation.sql": 0.20055838300004325,
+    "sql_total": 8.35939350800004
+  }
+}

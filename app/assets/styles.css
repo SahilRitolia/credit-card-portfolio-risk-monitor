@@ -1,0 +1,54 @@
+/* Credit Card Portfolio Risk Monitor - Power BI style design system. */
+html, body, [class*="css"] { font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif; }
+.stApp { background: #F3F4F6; }
+.block-container { padding-top: 1.4rem; padding-bottom: 2rem; max-width: 1500px; }
+[data-testid="stSidebar"] { background: #0B1F3A; }
+[data-testid="stSidebar"] * { color: #E5E7EB; }
+[data-testid="stSidebar"] [data-testid="stSelectbox"] [role="group"] { background: #FFFFFF; }
+[data-testid="stSidebar"] [data-testid="stSelectbox"] input { color: #1F2937 !important;
+  -webkit-text-fill-color: #1F2937 !important; }
+[data-testid="stSidebar"] [data-testid="stSelectbox"] button { background: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-testid="stSelectbox"] svg { color: #1F2937 !important; fill: #1F2937 !important; }
+[data-testid="stSidebar"] [data-testid="stButton"] button { background: #14305A; border-color: #2A4A7A; }
+[data-testid="stSidebar"] .stSelectbox label, [data-testid="stSidebar"] .stSlider label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #9FB3D1 !important; }
+[data-testid="stSidebar"] a[data-testid="stPageLink-NavLink"] { border-radius: 6px; padding: 4px 8px; }
+[data-testid="stSidebar"] a[data-testid="stPageLink-NavLink"]:hover { background: rgba(255,255,255,.08); }
+.ccrm-brand { padding: 4px 2px 14px 2px; border-bottom: 1px solid rgba(255,255,255,.12); margin-bottom: 10px; }
+.ccrm-brand .l1 { font-size: 12px; letter-spacing: .18em; color: #9FB3D1; font-weight: 600; }
+.ccrm-brand .l2 { font-size: 17px; letter-spacing: .08em; color: #FFFFFF; font-weight: 700; }
+.ccrm-side-label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #9FB3D1;
+  margin: 14px 0 4px 0; }
+.ccrm-foot { font-size: 11px; color: #C7D2E3; line-height: 1.45; border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 10px; margin-top: 12px; }
+.ccrm-foot b { color: #FFFFFF; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; font-size: 10px; }
+.ccrm-title { font-size: 24px; font-weight: 700; color: #0B1F3A; margin: 0; line-height: 1.25; }
+.ccrm-subtitle { font-size: 13px; color: #6B7280; margin: 2px 0 12px 0; }
+.ccrm-question { display: inline-block; font-size: 11px; color: #1F5FBF; background: #EAF1FB;
+  border-radius: 4px; padding: 2px 8px; margin-bottom: 8px; letter-spacing: .02em; }
+.ccrm-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; padding: 12px 14px;
+  min-height: 132px; }
+.ccrm-card .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #6B7280;
+  font-weight: 600; display: flex; justify-content: space-between; }
+.ccrm-card .info { cursor: help; color: #9CA3AF; font-weight: 700; }
+.ccrm-card .val { font-size: 28px; font-weight: 700; color: #1F2937; font-variant-numeric: tabular-nums;
+  margin-top: 4px; }
+.ccrm-card .sub { font-size: 12px; color: #6B7280; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.ccrm-card .up { color: #B5403A; } .ccrm-card .down { color: #3F8F6B; } .ccrm-card .flat { color: #6B7280; }
+.ccrm-chip { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .06em; border-radius: 4px;
+  padding: 1px 6px; margin-right: 4px; }
+.ccrm-chip.PASS { background: #E3F1EA; color: #3F8F6B; }
+.ccrm-chip.WARNING { background: #FBF1DC; color: #9A6B0F; }
+.ccrm-chip.FAIL { background: #F7E1DF; color: #B5403A; }
+.ccrm-chip.SMALL { background: #FBF1DC; color: #9A6B0F; }
+.ccrm-chip.FILTER { background: #EAF1FB; color: #1F5FBF; font-weight: 600; }
+.ccrm-banner { background: #FFFFFF; border: 1px solid #E5E7EB; border-left: 4px solid #D99A1E; border-radius: 8px;
+  padding: 10px 14px; font-size: 13px; color: #1F2937; margin: 4px 0 12px 0; }
+.ccrm-banner.info { border-left-color: #1F5FBF; }
+.ccrm-banner.neg { border-left-color: #B5403A; }
+.ccrm-signal { background: #0B1F3A; color: #FFFFFF; border-radius: 8px; padding: 12px 16px; font-size: 13px;
+  margin: 6px 0 12px 0; }
+.ccrm-signal b { font-size: 11px; letter-spacing: .1em; color: #9FB3D1; display: block; margin-bottom: 4px; }
+div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] { background: #FFFFFF; border: 1px solid #E5E7EB;
+  border-radius: 8px; padding: 6px; }
+div[data-testid="stExpander"] { background: #FFFFFF; border-radius: 8px; }

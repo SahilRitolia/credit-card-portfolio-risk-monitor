@@ -1,0 +1,9 @@
+-r requirements.txt
+pytest==9.1.1
+ruff==0.16.10
+pre-commit==4.3.0
+playwright==1.56.0
+nbconvert==7.17.1
+nbformat==5.10.4
+ipykernel==7.4.0
+matplotlib==3.10.8

@@ -1,0 +1,9 @@
+ID,CODE_GENDER,FLAG_OWN_CAR,FLAG_OWN_REALTY,CNT_CHILDREN,AMT_INCOME_TOTAL,NAME_INCOME_TYPE,NAME_EDUCATION_TYPE,NAME_FAMILY_STATUS,NAME_HOUSING_TYPE,DAYS_BIRTH,DAYS_EMPLOYED,FLAG_MOBIL,FLAG_WORK_PHONE,FLAG_PHONE,FLAG_EMAIL,OCCUPATION_TYPE,CNT_FAM_MEMBERS
+1001,F,N,Y,0,100000.0,Working,Higher education,Married,House / apartment,-10000,-2000,1,0,0,0,Laborers,2.0
+1002,M,Y,Y,1,200000.0,Working,Secondary / secondary special,Married,House / apartment,-15000,-3000,1,1,0,0,,3.0
+1002,M,Y,Y,1,250000.0,Working,Secondary / secondary special,Married,House / apartment,-15000,-3000,1,1,0,0,,3.0
+1004,F,N,N,0,150000.0,Pensioner,Secondary / secondary special,Widow,House / apartment,-22000,365243,1,0,0,0,,1.0
+1006,M,N,Y,0,300000.0,Commercial associate,Higher education,Single / not married,Rented apartment,-12000,-500,1,0,1,0,Managers,1.0
+1008,F,Y,Y,2,180000.0,State servant,Higher education,Married,House / apartment,-18000,-6000,1,0,0,1,Core staff,4.0
+1008,F,Y,Y,2,180000.0,State servant,Higher education,Married,House / apartment,-18000,-6000,1,0,0,1,Core staff,4.0
+9999,F,N,Y,0,120000.0,Working,Higher education,Married,House / apartment,-11000,-1000,1,0,0,0,Sales staff,2.0

@@ -1,0 +1,126 @@
+# Credit Card Portfolio Risk Monitor - single source of configuration.
+# Every threshold used by SQL, Python and the app is read from here.
+
+PAUSE_AT_CHECKPOINTS: false
+
+# evidence_based (default): C = PAID-OFF (absorbing), X = DORMANT, 0 = 1-29 DPD.
+# source_literal exists only for the sensitivity panel; the analytic pipeline refuses it.
+STATE_MAPPING: evidence_based
+
+seed: 20261004
+bootstrap:
+  B: 2000
+  chunk: 250
+  ci_level: 0.95
+  degenerate_zero_share: 0.5   # flag a cell when at least this share of replicates is exactly zero
+
+min_n_row: 30          # suppress roll-rate rows below this many transitions
+warn_n_row: 100        # warn below this many transitions
+suppress_cube_n: 5     # cells below this are suppressed in committed cubes that carry demographics
+
+mob_bands:
+  - {label: "early 0-6", lo: 0, hi: 6}
+  - {label: "middle 7-18", lo: 7, hi: 18}
+  - {label: "mature 19+", lo: 19, hi: 60}
+
+age_bands:
+  - {label: "20-29", lo: 20, hi: 30}
+  - {label: "30-39", lo: 30, hi: 40}
+  - {label: "40-49", lo: 40, hi: 50}
+  - {label: "50-59", lo: 50, hi: 60}
+  - {label: "60+", lo: 60, hi: 200}
+
+segments:
+  min_clients: 200
+  min_events: 10
+  horizon_mob: 12
+
+# Calendar windows on the ORIGIN month of a transition (relative months).
+periods:
+  - {name: "Full window", start: -60, end: -1}
+  - {name: "Last 12 months", start: -12, end: -1}
+  - {name: "Last 24 months", start: -24, end: -1}
+  - {name: "First half", start: -60, end: -31}
+  - {name: "Second half", start: -30, end: -1}
+
+vintage:
+  checkpoints: [6, 12, 18, 24]
+  exclude_vintages: []          # filled only if the left-truncation test fires
+  left_truncation_tolerance_pp: 5.0
+
+cure:
+  horizons: [1, 2, 3, 6]
+  exclude_left_censored: true
+
+backtest:
+  origin_start: -42
+  origin_end: -3
+  step: 3
+  horizons: [3, 6, 12]
+  min_train_months: 24
+  rolling_window: 24
+  smoothing_validation_months: 6
+  dirichlet_alpha_grid: [0, 1, 5, 20, 50, 100, 250, 1000]
+
+stress:
+  ead: 1000
+  lgd: 0.5
+  currency: "£"
+  horizons: [6, 12]
+  max_horizon: 12
+  presets:
+    BASE: {m: 1.0, c: 0.0}
+    MODERATE: {m: 1.5, c: -0.10}
+    SEVERE: {m: 2.5, c: -0.25}
+  reverse_target_multiple: 2.0
+  reverse_m_upper: 50.0
+
+# File-level truncation: credit_record.csv has exactly Excel's row limit. If the
+# truncation test fires, the final client in file order is excluded from analysis.
+truncation:
+  excel_row_limit: 1048575
+  exclude_final_client_if_truncated: true
+
+# Data-quality rule thresholds (PASS / WARNING / FAIL).
+dq:
+  short_history_months: 6
+  max_leading_x_share_warn: 0.25
+  max_anomaly_share_warn: 0.05
+  min_match_rate_warn: 0.75
+
+# Pilot audit values used for reproducibility checks:
+# the audit recomputes every item and reports agreement; nothing reads these as inputs.
+pilot_targets:
+  credit_rows: 1048575
+  credit_clients: 45985
+  credit_dup_id_month: 0
+  month_min: -60
+  month_max: 0
+  month_gap_pairs: 0
+  matched_clients: 36457
+  application_only: 402053
+  credit_only: 9528
+  first_status_x_clients: 18737
+  first_status_0_clients: 26802
+  first_status_c_clients: 432
+  c_to_c: 419323
+  c_transitions_total: 419324
+  c_preceded_by_open: 20241
+  open_preceded_by_c: 1
+  active_to_x_exits: 27660
+  active_to_x_clients: 12183
+  x_to_active_reentries: 19930
+  x_to_active_clients: 6561
+  co_to_nonco_consecutive_nonx: 107
+  co_transitions_nonx: 1564
+  open_accounts_m0: 9318
+  open_accounts_m1: 10769
+  nonx_m1: 28273
+  new_co_12m_from_m12: 41
+  open_0_4_at_m12: 9554
+  x_only_clients: 4536
+  vintage_m60_clients: 231
+  # Pilot absorbing chain with X dropped, buckets 1-29 / 30-59 / 60-89 / 90-119 / 120-149.
+  chain_x_dropped_p_co: [0.010, 0.028, 0.233, 0.568, 0.782]
+  chain_x_dropped_months: [17.5, 16.0, 12.3, 6.3, 2.4]
+  new_co_12m_by_origin: {-36: 29, -30: 34, -24: 32, -18: 35}
